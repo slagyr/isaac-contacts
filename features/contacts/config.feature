@@ -4,7 +4,6 @@ Feature: Contacts config — one handle belongs to one contact
 
   Tracked by isaac-o7tm.
 
-  @wip
   Scenario: two contacts listing the same handle is a config error naming both
     Given config file "contacts/cordelia.edn" containing:
       """

@@ -22,8 +22,11 @@ Depends on [isaac-foundation](https://github.com/slagyr/isaac-foundation) and
 
 ## What's here
 
-- Module `isaac.contacts` (`isaac.contacts.module/create-module`). A skeleton;
-  the contacts table and the identifier are tracked by isaac-o7tm.
+- Module `isaac.contacts` (`isaac.contacts.module/create-module`): declares the
+  `config/contacts/` table and a handle identifier on the agent berth. A contact
+  owns comm/id and email handles; ambiguous ownership is a config error.
+- [Contacts handbook](resources/isaac/contacts/handbook.md) documents the
+  contact file, match order, and stored turn reference.
 
 ## Development
 

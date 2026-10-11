@@ -3,4 +3,30 @@
  :builtin?    true
  :factory     isaac.contacts.module/create-module
  :description "Contacts for Isaac — names the party behind a comm handle, so the same person is one contact on every comm."
- :handbook    "isaac/contacts/handbook.md"}
+ :handbook    "isaac/contacts/handbook.md"
+
+ :isaac.agent/identifiers
+ {:contacts {:factory isaac.contacts.contacts/identify}}
+
+ :isaac.config/schema
+ {:contacts
+  {:schema
+   {:name          :contacts
+    :type          :map
+    :snapshot-only? true
+    :description   "Named people; one .edn file per contact under config/contacts/."
+    :key-spec      {:type :id}
+    :value-spec
+    {:name   :contact
+     :type   :map
+     :schema {:name    {:type :string :validations [:present?]}
+              :title   {:type :string}
+              :weight  {:type :int}
+              :handles {:type :seq
+                        :spec {:type :map
+                               :schema {:comm  {:type :keyword}
+                                        :id    {:type :string}
+                                        :email {:type :string}}}}}}}}}
+
+ :isaac.config/check
+ {:contacts {:fn isaac.contacts.contacts/check-config}}}

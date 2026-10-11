@@ -36,7 +36,6 @@ Feature: Contacts — a handle becomes the contact it belongs to
       | name   |
       | harbor |
 
-  @wip
   Scenario: a handle a contact lists by comm and id is stored as that contact
     When a turn is submitted with:
       | key                | value        |
@@ -60,7 +59,6 @@ Feature: Contacts — a handle becomes the contact it belongs to
       | (?m)^for\.id: cordelia$  |
     And the stdout does not contain "Harbormaster"
 
-  @wip
   Scenario: the same person on another comm is matched by email
     When a turn is submitted with:
       | key                | value                     |
@@ -80,7 +78,6 @@ Feature: Contacts — a handle becomes the contact it belongs to
       | from.comm: semaphore     |
       | from.handle: flag-22     |
 
-  @wip
   Scenario: the comm and id win when the email belongs to someone else
     Given the isaac EDN file "config/contacts/hieronymus.edn" exists with:
       | path    | value                                    |
@@ -101,7 +98,6 @@ Feature: Contacts — a handle becomes the contact it belongs to
       | from.kind: contact       |
       | (?m)^from\.id: cordelia$ |
 
-  @wip
   Scenario: a handle no contact lists is stored as it arrived
     When a turn is submitted with:
       | key       | value        |
@@ -117,7 +113,6 @@ Feature: Contacts — a handle becomes the contact it belongs to
       | from.kind: handle          |
       | (?m)^from\.id: stranger-1$ |
 
-  @wip
   Scenario: a contact matched on an unverified handle stays unverified
     When a turn is submitted with:
       | key                | value                     |
