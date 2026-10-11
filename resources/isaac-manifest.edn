@@ -1,0 +1,6 @@
+{:id          :isaac.contacts
+ :version     "0.1.0"
+ :builtin?    true
+ :factory     isaac.contacts.module/create-module
+ :description "Contacts for Isaac — names the party behind a comm handle, so the same person is one contact on every comm."
+ :handbook    "isaac/contacts/handbook.md"}
